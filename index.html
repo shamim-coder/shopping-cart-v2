@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-lg-9">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Product</th>
+                                    <th scope="col" width="120">Quantity</th>
+                                    <th scope="col" width="120">Price</th>
+                                    <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574342017/rTVSl.jpg" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td> <select onchange="quantityCalculation('t-shirt', tShirt)" id="t-shirt-quantity" class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select> </td>
+                                    <td>
+                                        <div class="price-wrap"> <var id="t-shirt-price" class="price">$9.20 </var> <small id="t-shirt-each-price" class="text-muted"> 9.20 </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574342054/imgrc0078783629.jpg" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: ADDA </p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td> <select onchange="quantityCalculation('formal-shirt', formalShirt)" id="formal-shirt-quantity" class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select> </td>
+                                    <td>
+                                        <div class="price-wrap"> <var id="formal-shirt-price" class="price">$12</var> <small id="formal-shirt-each-price" class="text-muted"> $12 each </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574342208/ra_unisex_tshirt_x2200_fafafa_ca443f4786_front-c_267_146_1000_1000-bg_f8f8f8.u1.jpg" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Printed White Tshirt</a>
+                                                <p class="small text-muted">SIZE:M <br> Brand: Cantabil</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td> <select onchange="quantityCalculation('printed-shirt', printedShirt)" id="printed-shirt-quantity" class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select> </td>
+                                    <td>
+                                        <div class="price-wrap"> <var id="printed-shirt-price" class="price">$6</var> <small id="printed-shirt-each-price" class="text-muted"> $6 each</small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </aside>
+            <aside class="col-lg-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group"> <label>Have coupon?</label>
+                            <div class="input-group">
+                                <input id="coupon-value" type="text" class="form-control coupon" name="" placeholder="Coupon code">
+                                <span class="input-group-append"> <button id="coupon-button" class="btn btn-primary btn-apply coupon">Apply</button> </span>
+                            </div>
+                        </div>
+                        <p>Use this Code for 10% off <span id="coupon">HERO2021</span></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total price:</dt>
+                            <dd id="total-price" class="text-right ml-3">$27.20</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Discount:</dt>
+                            <dd id="discount-value" class="text-right ml-3">$0.00</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right text-dark b ml-3"><strong id="grand-total">$27.20</strong></dd>
+                        </dl>
+                        <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
